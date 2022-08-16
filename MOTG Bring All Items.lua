@@ -1,3 +1,5 @@
+--Pick your location to bring all items to (best works midair) and execute it. Does the work for you and brings everything as long as they are items.
+
 local a = game:GetService("Workspace").Items:getDescendants()
 
 local b = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
