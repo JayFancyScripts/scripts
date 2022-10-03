@@ -1,0 +1,108 @@
+game:GetService("ReplicatedStorage")
+
+print('J', 'A', 'Y', 'F', 'A', 'N', 'C', 'Y') -- dont fucking leak this you perv
+
+for i, v in pairs(game:GetService("Workspace").Blocks:GetDescendants()) do
+
+    print('Highlighted ' .. v.Name)
+
+    if v:IsA('SelectionBox') then
+        v:Destroy()
+        warn('Re-highlighting...')
+    end
+
+    if v:IsA('Part') and v.CanCollide == false then
+        wait()
+        v.Transparency = .3
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v
+        sel.Adornee = v
+        sel.Transparency = 1
+        sel.SurfaceTransparency = .75
+        sel.SurfaceColor3 = Color3.fromRGB(90, 0, 4)
+    end
+
+    if v:IsA('Part') and v.CanCollide == true and v.Transparency == 1 then
+        wait()
+        v.Transparency = .75
+    end
+
+    if v.Name == "kill" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(255, 0, 4)
+
+    elseif v.Name == "statgiver" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(240, 100, 240)
+
+    elseif v.Name == "Sign" and v.ClassName == "StringValue" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent.Parent
+        sel.Adornee = v.Parent.Parent
+        sel.Color3 = Color3.fromRGB(56, 88, 232)
+
+    elseif v.Name == "SpotSign" and v.ClassName == "StringValue" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent.Parent
+        sel.Adornee = v.Parent.Parent
+        sel.Color3 = Color3.fromRGB(56, 88, 160)
+
+    elseif v.Name == "geargiver" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(84, 240, 82)
+
+    elseif v.Name == "baller" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(48, 240, 218)
+
+    elseif v.Name == "tripper" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(240, 225, 14)
+
+    elseif v.Name == "cannon" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(240, 131, 123)
+
+    elseif v.Name == "tele" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(230, 230, 250)
+
+    elseif v.Name == "timetele" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(255, 230, 250)
+
+    elseif v.Name == "stattele" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(230, 255, 250)
+
+    end
+end
