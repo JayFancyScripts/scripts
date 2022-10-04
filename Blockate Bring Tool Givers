@@ -1,0 +1,14 @@
+for i,v in pairs(workspace.Blocks:GetDescendants()) do
+    if v.Name == ('geargiver') then
+        local p = v.Parent.CFrame
+        local k
+        k = v.Parent.CanCollide
+        v.Parent.CanCollide = false
+        v.Parent.CFrame = game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame
+        wait()
+        v.Parent.CFrame = game.Players.LocalPlayer.Character:FindFirstChild('HumanoidRootPart').CFrame + Vector3.new(0,.01,0)
+        wait()
+        v.Parent.CanCollide = k
+        v.Parent.CFrame = p
+    end
+end
