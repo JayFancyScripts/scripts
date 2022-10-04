@@ -1,0 +1,11 @@
+local no_repeat_blocks = true
+
+local p = game.Workspace.Blocks:GetChildren()
+local un = {}
+while wait() do wait()
+local m = math.random(1,table.getn(p))
+if no_repeat_blocks then if table.find(un,m) then repeat game:GetService('RunService').RenderStepped:Wait() m = math.random(1,table.getn(p)) until not table.find(un,m) end end
+table.insert(un,m)
+local r,g,b = math.random(0,255),math.random(0,255),math.random(0,255)
+game:GetService("ReplicatedStorage").Sockets.Edit.Paint:FireServer({{p[m],p[m],{["Reflectance"] = 0,["CanCollide"] = false,["Color"] = Color3.fromRGB(r,g,b),["LightColor"] = Color3.new(r,g,b),["Transparency"] = 0,["Light"] = 0,["Material"] = math.random(1,10),["Shape"] = 5,["Size"] = 1},1,{["Color"] = true,["Material"] = true}}})
+end
