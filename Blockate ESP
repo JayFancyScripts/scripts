@@ -89,6 +89,13 @@ for i, v in pairs(game:GetService("Workspace").Blocks:GetDescendants()) do
         sel.Parent = v.Parent
         sel.Adornee = v.Parent
         sel.Color3 = Color3.fromRGB(230, 230, 250)
+        
+    elseif v.Name == "powerup" and v.ClassName == "Decal" then
+        wait()
+        local sel = Instance.new('SelectionBox')
+        sel.Parent = v.Parent
+        sel.Adornee = v.Parent
+        sel.Color3 = Color3.fromRGB(0,0,0)
 
     elseif v.Name == "timetele" and v.ClassName == "Decal" then
         wait()
